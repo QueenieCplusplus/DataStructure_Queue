@@ -111,34 +111,6 @@ It sounds ridiculously simple. And maybe it is. That's kind of the whole point.
 
 http://zguide.zeromq.org/page:all#header-3
 
-server in php
-
-    <?php
-    /*
-    *  Hello World server
-    *  Binds REP socket to tcp://*:5555
-    *  Expects "Hello" from client, replies with "World"
-    * @author Ian Barber <ian(dot)barber(at)gmail(dot)com>
-    */
-
-    $context = new ZMQContext(1);
-
-    //  Socket to talk to clients
-    $responder = new ZMQSocket($context, ZMQ::SOCKET_REP);
-    $responder->bind("tcp://*:5555");
-
-    while (true) {
-        //  Wait for next request from client
-        $request = $responder->recv();
-        printf ("Received request: [%s]\n", $request);
-
-        //  Do some 'work'
-        sleep (1);
-
-        //  Send reply back to client
-        $responder->send("World");
-    }
- 
  server in java
  
      package guide;
@@ -261,32 +233,6 @@ server in ruby
       puts "Received reply #{request_nbr}: [#{reply}]"
     end
     
-server in Python
-
-    #
-    #   Hello World server in Python
-    #   Binds REP socket to tcp://*:5555
-    #   Expects b"Hello" from client, replies with b"World"
-    #
-
-    import time
-    import zmq
-
-    context = zmq.Context()
-    socket = context.socket(zmq.REP)
-    socket.bind("tcp://*:5555")
-
-    while True:
-        #  Wait for next request from client
-        message = socket.recv()
-        print("Received request: %s" % message)
-
-        #  Do some 'work'
-        time.sleep(1)
-
-        #  Send reply back to client
-        socket.send(b"World")
-
 # MQTT
 
 https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.pdf
