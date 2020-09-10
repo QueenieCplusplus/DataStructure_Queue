@@ -6,7 +6,6 @@ Message Queue - functionality Middleware
                  
  
 # REQ/ RES(REP)
- 
                         Client App
                         
                             Req
@@ -17,7 +16,6 @@ Message Queue - functionality Middleware
                               
  
 # PUB/ SUB 
- 
                           Publisher
                             bind
                              |
@@ -46,8 +44,6 @@ Message Queue - functionality Middleware
  
  
 # Pipeline in Parallel
-
-https://github.com/QuinoaPy/pipeline
  
                             Push
                              |
