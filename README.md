@@ -1,8 +1,6 @@
 # MQ
 Message Queue - functionality Middleware
 
-https://github.com/nodejs2019/message_queue
-
 
                  TCP Socket => MQ Socket
                  
@@ -19,8 +17,6 @@ https://github.com/nodejs2019/message_queue
                               
  
 # PUB/ SUB 
-
-https://github.com/QuinoaPy/pub_sub
  
                           Publisher
                             bind
